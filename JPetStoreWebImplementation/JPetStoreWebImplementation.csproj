@@ -53,6 +53,7 @@
     <Compile Include="BaseClass.cs" />
     <Compile Include="CatDetailsPage.cs" />
     <Compile Include="CatsPage.cs" />
+    <Compile Include="CheckoutPage.cs" />
     <Compile Include="HomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoppingCartPage.cs" />

@@ -10,6 +10,7 @@ namespace JPetStoreWebImplementation
     public class ShoppingCartPage
     {
         private IWebDriver driver;
+        private By checkout = By.LinkText("Proceed to Checkout");
 
         public ShoppingCartPage(IWebDriver driver)
         {
@@ -18,6 +19,11 @@ namespace JPetStoreWebImplementation
         public void NaviagateToHomePage()
         {
             driver.FindElement(By.LinkText("Return to Main Menu")).Click();
+        }
+        public CheckoutPage CheckoutPage()
+        {
+            driver.FindElement(checkout).Click();
+            return new CheckoutPage(driver);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace JPetStoreWebImplementation
         }
         public void EnterUserData()
         {
-            userName.SendKeys("akgsdk");
+            userName.SendKeys("theakg");
             password.SendKeys("password");
             RepeatPassword.SendKeys("password");
             firstName.SendKeys("Sandy");

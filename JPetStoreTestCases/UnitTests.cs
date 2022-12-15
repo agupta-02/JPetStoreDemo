@@ -29,7 +29,9 @@ namespace JPetStoreTestCases
             CatDetailsPage malePersianCat = persian.NavigateToPersianCatDetailsPage();
             malePersianCat.AddtoCart();
             ShoppingCartPage myCart = homePageVar.CreateShoppingCart();
-            myCart.NaviagateToHomePage();
+            //myCart.NaviagateToHomePage();
+            CheckoutPage checkout = myCart.CheckoutPage();
+            checkout.FinishCheckout();
         }
 
         [TestMethod]
