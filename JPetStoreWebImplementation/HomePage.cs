@@ -11,6 +11,7 @@ namespace JPetStoreWebImplementation
     {
         private IWebDriver driver;
         private By signIn = By.XPath("//a[text()='Sign In']");
+        private By catsPage = By.XPath("(//div[@id='SidebarContent']//img)[3]");
 
         public HomePage(IWebDriver driver)
         {
@@ -21,6 +22,22 @@ namespace JPetStoreWebImplementation
         {
             driver.FindElement(signIn).Click();
             return new SignInPage(driver);
+        }
+
+        public void NavigateToDogPage()
+        {
+
+        }
+
+        public CatsPage NavigateToCatePage()
+        {
+            driver.FindElement(catsPage).Click();
+            return new CatsPage(driver);
+        }
+
+        public ShoppingCartPage CreateShoppingCart()
+        {
+            return new ShoppingCartPage(driver);
         }
     }
 }

@@ -19,12 +19,17 @@ namespace JPetStoreTestCases
         [TestMethod]
         public void EndToEndTC()
         {
-            HomePage homePageVar = _page.LaunchBrowser("chrome");
+            HomePage homePageVar = _page.LaunchBrowser("edge");
             SignInPage signInPageVar = homePageVar.NavigateToSignInPage();
             UserRegistrationPage userRegistrationPageVar = signInPageVar.NavigateToUserRegistration();
             userRegistrationPageVar.EnterUserData();
             homePageVar.NavigateToSignInPage();
             signInPageVar.EnterUserCred();
+            CatsPage persian = homePageVar.NavigateToCatePage();
+            CatDetailsPage malePersianCat = persian.NavigateToPersianCatDetailsPage();
+            malePersianCat.AddtoCart();
+            ShoppingCartPage myCart = homePageVar.CreateShoppingCart();
+            myCart.NaviagateToHomePage();
         }
 
         [TestMethod]
